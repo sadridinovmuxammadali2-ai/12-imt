@@ -1,7 +1,6 @@
-
 "use client";
 
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import products from "@/app/products.json";
@@ -9,7 +8,7 @@ import ProductCard from "@/components/product/ProductCard";
 import { useStore } from "@/components/store/StoreProvider";
 import "./homepage.css";
 
-export default function HomePage() {
+function HomePageContent() {
   const { t } = useStore();
   const searchParams = useSearchParams();
 
@@ -110,7 +109,6 @@ export default function HomePage() {
 
   return (
     <main className="container homepage-page">
-
       <section className="home-hero">
         <div className="hero-copy">
           <div className="hero-brand">
@@ -353,5 +351,14 @@ export default function HomePage() {
         </section>
       )}
     </main>
+  );
+}
+
+// Asosiy eksport qilinadigan komponent (Suspense bilan o'ralgan)
+export default function HomePage() {
+  return (
+    <Suspense fallback={<div style={{ textAlign: "center", padding: "50px" }}>Yuklanmoqda...</div>}>
+      <HomePageContent />
+    </Suspense>
   );
 }
