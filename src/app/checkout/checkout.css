@@ -1,0 +1,139 @@
+.checkout-page {
+    padding: 35px 0 70px
+}
+
+.checkout-page .breadcrumbs {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 45px
+}
+
+.checkout-page .breadcrumbs a {
+    color: #777
+}
+
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9%;
+    padding-bottom: 35px
+}
+
+.checkout-grid h1 {
+    font-size: 28px;
+    font-weight: 500;
+    margin: 0 0 28px
+}
+
+.checkout-grid section>label:not(.save-check) {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 18px
+}
+
+.checkout-grid section input:not([type=checkbox]) {
+    width: 100%;
+    border: 0;
+    background: #f5f5f5;
+    padding: 13px;
+    border-radius: 3px
+}
+
+.save-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px
+}
+
+.save-check input {
+    accent-color: #db4444
+}
+
+.checkout-summary {
+    padding-top: 55px
+}
+
+.checkout-product {
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    font-size: 13px
+}
+
+.checkout-product img {
+    width: 45px;
+    height: 42px;
+    object-fit: contain
+}
+
+.checkout-product b {
+    font-weight: 400
+}
+
+.checkout-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding: 13px 0;
+    font-size: 13px
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 13px;
+    margin: 16px 0
+}
+
+.payment-option input {
+    accent-color: #db4444
+}
+
+.coupon-row {
+    display: flex;
+    gap: 12px;
+    margin: 24px 0
+}
+
+.coupon-row input {
+    min-width: 0;
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #888;
+    border-radius: 3px
+}
+
+.coupon-row .primary-btn {
+    padding: 10px 18px;
+    white-space: nowrap
+}
+
+.place-order {
+    min-width: 150px
+}
+
+@media(max-width:700px) {
+    .checkout-grid {
+        grid-template-columns: 1fr;
+        gap: 25px
+    }
+
+    .checkout-summary {
+        padding-top: 0
+    }
+
+    .checkout-grid h1 {
+        font-size: 24px
+    }
+
+    .coupon-row {
+        flex-wrap: wrap
+    }
+}
